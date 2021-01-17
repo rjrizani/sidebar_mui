@@ -19,19 +19,14 @@ const useStyles = makeStyles({
 const Drawer = (props) => {
     const {history} = props;
     const classes = useStyles();
-    const itemList = [{ text: "Home", 
+    const itemList = [{ text: "Dashboard", 
                         icon: <InboxIcon/>,
                         onClick: ()=> history.push('/')
                       }, 
                       {
-                        text: "About", 
+                        text: "Task", 
                         icon: <MailIcon/>,
-                        onClick: ()=> history.push('/about')}, 
-                      {
-                        text: "Contact", 
-                        icon: <MailIcon/>,
-                        onClick: ()=> history.push('/contact')
-                      }
+                        onClick: ()=> history.push("/task")}
                     ];
     return (
         <MUIDrawer variant="permanent" className={classes.drawer}>

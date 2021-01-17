@@ -1,7 +1,7 @@
-import Home from "./Home";
-import Contact from "./Contact";
-import About from "./About";
-import Drawer from "./Drawer"
+import Dashboard from "./Dashboard";
+import TaskBoard from "./TaskBoard";
+import Drawer from "./Drawer";
+import Bar from "./Bar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core";
 
@@ -18,9 +18,8 @@ export default function App() {
       <BrowserRouter>
       <Drawer/>
         <Switch>
-          <Route exact from="/" render={props => <Home {...props}/>} />
-          <Route exact path="/contact" render={props => <Contact {...props}/>} />
-          <Route exact path="/about" render={props => <About {...props}/>} /> 
+          <Route exact from="/" render={props => <Dashboard {...props}/>} />
+          <Route exact path="/task" render={props => <TaskBoard {...props}/>} />
         </Switch>
       </BrowserRouter>
     </div>
