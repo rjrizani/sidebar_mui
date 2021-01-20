@@ -6,13 +6,13 @@ import {Drawer as MUIDrawer,
         ListItemText
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { withRouter } from "react-router-dom";
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import ListIcon from '@material-ui/icons/List';
 
 const useStyles = makeStyles({
   drawer: {
-    width: "190px"
+    width: "190px",
   }
 })
 
@@ -20,17 +20,18 @@ const Drawer = (props) => {
     const {history} = props;
     const classes = useStyles();
     const itemList = [{ text: "Dashboard", 
-                        icon: <InboxIcon/>,
+                        icon: <DashboardIcon/>,
                         onClick: ()=> history.push('/')
                       }, 
                       {
                         text: "Task", 
-                        icon: <MailIcon/>,
+                        icon: <ListIcon/>,
                         onClick: ()=> history.push("/task")}
                     ];
     return (
         <MUIDrawer variant="permanent" className={classes.drawer}>
             <List>
+            Menu
             {itemList.map((item, index) => {
               const {text, icon, onClick} = item; 
               return (

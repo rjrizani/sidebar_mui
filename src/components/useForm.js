@@ -17,10 +17,7 @@ export function useForm(initialFValues, validateOnChange=false, validate) {
         validate({[name]:value})
     }
 
-    const resetForm = ()=>{
-        setValues(initialFValues);
-        setErrors({})
-    }
+
 
     return {
         values,
@@ -28,7 +25,6 @@ export function useForm(initialFValues, validateOnChange=false, validate) {
         errors,
         setErrors,
         handleInputChange,
-        resetForm
     }
 }
 
@@ -47,8 +43,8 @@ export function Form(props) {
     const classes = useStyles();
     const {children, ...other} = props;
     return (
-        <form className={classes.root} autoComplete="off" {...other}>
+        <div className={classes.root} autoComplete="off" {...other}>
              {props.children}
-        </form>
+        </div>
     )
 }

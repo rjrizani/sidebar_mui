@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import clsx from 'clsx';
 
 const useStyles = makeStyles({
   root: {
@@ -22,13 +23,12 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleCard(props) {
-  const {name, task, color} = props; 
-  const backCol = color;console.log(backCol);
+  const {name, task, className, ...others} = props; 
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
+      <CardContent className={clsx(classes.root, className)} {...others}>
+        <Typography className={classes.title} color="textPrimary" gutterBottom>
          {name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
